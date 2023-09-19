@@ -1,0 +1,1 @@
+Some projects in c++ to practice and apply newer concepts.
