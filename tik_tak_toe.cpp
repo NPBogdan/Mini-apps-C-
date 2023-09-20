@@ -42,12 +42,13 @@ bool tableCheck(char table[3][3], int playerTurn){
 int main(){
     char table[3][3];
     bool end = 0;
+    int turn = 1;
     int row = 0, col = 0;
     int playerTurn = 1;
 
     cout << "Game started!" << endl;
 
-    while(end == 0){
+    while(end == 0 && turn < 10){
         if(playerTurn == 1){
             //Introduce valorile rand/coloana
             cout << "Player 1 turn: " << endl;
@@ -95,7 +96,7 @@ int main(){
                 if(end == true){
                     tableShow(table);
                 }
-
+                turn++;
                 playerTurn = 2;
             }
         }
@@ -146,10 +147,14 @@ int main(){
                 if(end == true){
                     tableShow(table);
                 }
-
+                turn++;
                 playerTurn = 1;
             }
         }
+    }
+
+    if(turn == 10){
+        cout << "Egalitate!" << endl;
     }
 
     return 0;
